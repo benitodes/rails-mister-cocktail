@@ -1,0 +1,19 @@
+<div class="container-cards">
+  <% @cocktails.each_slice(3) do |row| %>
+    <div class="card-deck">
+        <% row.each do |cocktail| %>
+          <div class="card col-md-4 mt-3">
+            <div class="cards">
+               <h5 class="card-title"><%= cocktail.name %></h5>
+               <p class="card-text">Description</p>
+            </div>
+            <div style='text-align: center'>
+               <a><%= link_to "View this cocktail", cocktail_path(cocktail), class: 'btn-ghost' %></a>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+</div>
+
+
